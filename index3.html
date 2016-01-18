@@ -2,9 +2,85 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Title</title>
+
+    <style>
+        .container{
+            display: flex;
+            display: -webkit-flex;
+            flex-flow: row wrap;
+            -webkit-flex-flow: row wrap;
+        }
+
+        .columna1,
+        .columna2,
+        .columna3,
+        .columna4,
+        .columna5{
+            width: 100%;
+        }
+
+        .columna1{
+            background: red;
+        }
+
+        .columna2{
+            background: blue;
+        }
+
+        .columna3{
+            background: olive;
+        }
+
+        .columna4{
+            background: white;
+        }
+
+        .columna5{
+            background: green;
+        }
+
+        @media (min-width: 600px) {
+            .columna2,
+            .columna3,
+            .columna4,
+            .columna5{
+                width: 50%;
+            }
+        }
+
+        @media (min-width: 800px) {
+            .columna1{
+                width: 60%;
+            }
+            .columna2{
+                width: 40%;
+            }
+            .columna3,
+            .columna4,
+            .columna5{
+                width: 50%;
+            }
+
+            .container{
+                width: 800px;
+
+            }
+        }
+    </style>
 </head>
 <body>
+
+<div class="container">
+    <section class="columna1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, blanditiis corporis eaque harum illo illum impedit iusto magnam magni modi nam, nulla omnis pariatur provident quaerat sit sunt temporibus voluptas!</section>
+    <section class="columna2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias doloribus error ipsa ipsam, omnis praesentium reprehenderit sed similique. Dolores hic in nisi non! Blanditiis dolores ipsum neque nisi quisquam!</section>
+    <section class="columna3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis delectus dicta dolorem doloremque esse excepturi ipsam nostrum, odit officiis omnis ratione soluta sunt. Accusamus esse magnam, minima natus odit sit.</section>
+    <section class="columna4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus beatae nesciunt porro sapiente voluptates. Accusantium architecto culpa ea explicabo fuga non placeat, quos temporibus voluptatem! A beatae dolor iure nisi!</section>
+    <section class="columna5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias aperiam aspernatur atque commodi dolorem illo incidunt, modi quae similique. Accusamus consequatur cumque placeat quae repudiandae rerum sapiente, suscipit! Nisi.</section>
+
+</div>
 
 </body>
 </html>
