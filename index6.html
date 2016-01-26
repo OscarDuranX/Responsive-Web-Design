@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>layout Shifter</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+
+
+    <style>
+
+        .container {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-flow: row wrap;
+            flex-flow: row wrap;
+        }
+
+
+        .columna1{
+            background: red;
+            position: absolute;
+            width: 250px;
+            height: 100vh;
+            -webkit-transition: -webkit-transform 0.3s ease-out;
+            -moz-transition: -moz-transform 0.3s  ease-out;
+            -ms-transition: -ms-transform 0.3s  ease-out;
+            -o-transition: -o-transform 0.3s  ease-out;
+            transition: transform 0.3s  ease-out;
+        }
+
+        .columna2{
+            position: absolute;
+            background: blue;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .columna1 {
+            -webkit-transition: translate(-250px,0);
+            -moz-transition: translate(-250px,0);
+            -ms-transition: translate(-250px,0);
+            -o-transition: translate(-250px,0);
+            transition: translate(-250px,0);
+
+        }
+
+        .columna1 open{
+            -webkit-transform: translate(0,0);
+            -moz-transform: translate(0,0);
+            -ms-transform: translate(0,0);
+            -o-transform: translate(0,0);
+            transform: translate(0,0);
+
+        }
+
+
+
+        @media (min-width: 600px) {
+            /*.columna1{*/
+                /*width: 15%;*/
+                /*height: 100vh;*/
+            /*}*/
+
+
+        }
+
+
+        @media (min-width: 800px) {
+
+            /*.container{*/
+                /*width: 800px;*/
+                /*margin-left: auto;*/
+                /*margin-right: auto;*/
+            /*}*/
+
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+        <section class="columna1" id="sidePanel">
+    	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, aperiam aut dolor dolore ducimus earum enim fuga id, ipsum itaque laudantium neque officia officiis quia, similique temporibus tenetur voluptatem! Laborum.
+        <br/>
+
+        <ul>
+            <li>Lorem ipsum.</li>
+            <li>Hic, velit.</li>
+            <li>Architecto, minima.</li>
+            <li>Impedit, non?</li>
+            <li>Explicabo, repellendus.</li>
+        </ul>
+
+    </section>
+    <section class="columna2" id="mainPanel">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias doloribus error ipsa ipsam, omnis praesentium reprehenderit sed similique. Dolores hic in nisi non! Blanditiis dolores ipsum neque nisi quisquam!</section>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.6/hammer.min.js"></script>
+<script>
+
+    (function() {
+        var sidePanel = document.getElementById('sidePanel');
+        var mainPanel = document.getElementById('mainPanel');
+        var hammerPanel = new Hammer(mainPanel);
+
+        hammerPanel
+                .on('swiperight', function (e) {
+                    sidePanel.classList.toggle('open');
+                })
+                .on('swipeleft', function (e) {
+                    sidePanel.classList.toggle('open');
+                })
+    }());
+
+</script>
+</body>
+</html>
